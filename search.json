@@ -1,0 +1,282 @@
+[
+  {
+    "objectID": "tech-stack.html",
+    "href": "tech-stack.html",
+    "title": "Tech Stack",
+    "section": "",
+    "text": "This dashboard demonstrates how Quarto can serve as a multi-page dashboard framework, integrating multiple visualization technologies into a cohesive static site.",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "tech-stack.html#architecture",
+    "href": "tech-stack.html#architecture",
+    "title": "Tech Stack",
+    "section": "Architecture",
+    "text": "Architecture\nThe site is built as a Quarto website (type: website), not using the dashboard format. This provides:\n\nSidebar navigation with Bootstrap Icons\nFull page layout with the Flatly theme\nTable of contents per page\nStatic site output to _site/",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "tech-stack.html#visualization-technologies",
+    "href": "tech-stack.html#visualization-technologies",
+    "title": "Tech Stack",
+    "section": "Visualization Technologies",
+    "text": "Visualization Technologies\n\necharts4r (R)\nUsed on the Species Overview and Island Comparison pages.\n\nWhat: R wrapper for Apache ECharts\nFeatures: Boxplots, bar charts, scatter plots with tooltips\nPattern: Charts defined in R code blocks, rendered at build time\nData: palmerpenguins::penguins dataset loaded via setup.R\nExtras: Toolbox with data zoom and save-as-image\n\n\n\nShinylive (R → WebAssembly)\nUsed on the Explorer page.\n\nWhat: Shiny apps compiled to WebAssembly, running entirely in the browser\nFeatures: Reactive UI with dropdowns and scatter plot\nPattern: Single {shinylive-r} code block with full UI + server\nExtension: quarto-ext/shinylive\nLayout: bslib::page_sidebar() for sidebar controls\n\n\n\nReact + D3 (JavaScript)\nUsed on the D3 Visualization page.\n\nWhat: Custom interactive visualization built with React and D3\nFeatures: Waffle chart with hover highlighting by species and island\nPattern: Separate Vite project in react-chart/, built to dist/, embedded via &lt;iframe&gt;\nKey config: base: './' in vite.config.js for relative asset paths\nBuild: npm run build produces static files; Quarto copies dist/ to _site/",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "tech-stack.html#data-tables",
+    "href": "tech-stack.html#data-tables",
+    "title": "Tech Stack",
+    "section": "Data Tables",
+    "text": "Data Tables\nAll data pages include reactable tables with:\n\nSearch functionality\nColumn filtering\nAdjustable page sizes\nRow highlighting",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "tech-stack.html#css",
+    "href": "tech-stack.html#css",
+    "title": "Tech Stack",
+    "section": "CSS",
+    "text": "CSS\nCustom stylesheet (styles.css) adapted with:\n\nPenguin species color palette (orange/purple/green)\nGray scale design tokens\nInter font family\nStyled panel tabsets, sidebar, tables, and iframes",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "tech-stack.html#how-to-reproduce",
+    "href": "tech-stack.html#how-to-reproduce",
+    "title": "Tech Stack",
+    "section": "How to Reproduce",
+    "text": "How to Reproduce\n# 1. Install the shinylive Quarto extension\nquarto add quarto-ext/shinylive\n\n# 2. Build the React chart\ncd react-chart && npm install && npm run build && cd ..\n\n# 3. Preview the site\nquarto preview\n\n# 4. Build the site\nquarto render",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "tech-stack.html#links",
+    "href": "tech-stack.html#links",
+    "title": "Tech Stack",
+    "section": "Links",
+    "text": "Links\n\nData: palmerpenguins R package\nQuarto: quarto.org\necharts4r: echarts4r.john-coene.com\nShinylive: shinylive.io\nReact: react.dev\nD3: d3js.org",
+    "crumbs": [
+      "Tech Stack"
+    ]
+  },
+  {
+    "objectID": "penguins-d3.html",
+    "href": "penguins-d3.html",
+    "title": "D3 Visualization",
+    "section": "",
+    "text": "This interactive waffle chart is built with React + D3 and embedded via an iframe. Each square represents one penguin, colored by species and grouped by island. Hover over species labels or island panels to highlight.",
+    "crumbs": [
+      "D3 Visualization"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Palmer Penguins Dashboard",
+    "section": "",
+    "text": "Artwork by Allison Horst\n\n\nThis dashboard showcases how Quarto can integrate multiple visualization technologies into a cohesive, static-site dashboard.\nNo server required.\nEach page showcases different technologies:\n\nSpecies Overview — Boxplots of body measurements using {echarts4r} and page headers\nIsland Comparison — Scatter plots and composition charts using {echarts4r} and Quarto tabs\nExplorer — Interactive app usign shinylive\nD3 Visualization — Interactive waffle chart using React + D3\nData — Embedded data table using {reactable}",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#the-dataset",
+    "href": "index.html#the-dataset",
+    "title": "Palmer Penguins Dashboard",
+    "section": "The Dataset",
+    "text": "The Dataset\nThe Palmer Penguins dataset contains measurements for 342 penguins from three species collected at three islands in the Palmer Archipelago, Antarctica.\n\n\nAdelie\nThe most widespread species, found on all three islands. Characterized by shorter bills and moderate body mass.\n\nCount: 151\nIslands: Biscoe, Dream, Torgersen\n\n\n\nChinstrap\nNamed for the thin black line running under their chin. Found exclusively on Dream Island.\n\nCount: 68\nIslands: Dream\n\n\n\nGentoo\nThe largest of the three species, with distinctive orange bills. Found primarily on Biscoe Island.\n\nCount: 123\nIslands: Biscoe",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#measurements",
+    "href": "index.html#measurements",
+    "title": "Palmer Penguins Dashboard",
+    "section": "Measurements",
+    "text": "Measurements\nThe dataset includes four key body measurements:\n\n\n\nMeasurement\nDescription\n\n\n\n\nBill Length (mm)\nLength of the penguin’s bill\n\n\nBill Depth (mm)\nDepth of the penguin’s bill\n\n\nFlipper Length (mm)\nLength of the penguin’s flipper\n\n\nBody Mass (g)\nWeight of the penguin",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#explore",
+    "href": "index.html#explore",
+    "title": "Palmer Penguins Dashboard",
+    "section": "Explore",
+    "text": "Explore\nUse the sidebar to navigate:\n\nAbout — The Palmer Penguins dataset and species\nSpecies Overview — Boxplots of body measurements\nIsland Comparison — Scatter plots and composition charts\nExplorer — Interactive Shinylive app\nD3 Visualization — React + D3 waffle chart\nData — Browse the full dataset\nTech Stack — How it was built",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#data-source",
+    "href": "index.html#data-source",
+    "title": "Palmer Penguins Dashboard",
+    "section": "Data Source",
+    "text": "Data Source\nData were collected by Dr. Kristen Gorman at Palmer Station, Antarctica, and made available through the palmerpenguins R package by Allison Horst.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "explorer.html",
+    "href": "explorer.html",
+    "title": "Interactive Explorer",
+    "section": "",
+    "text": "This page contains interactive content that may take a moment to load, please be patient. If you refresh this page, it will have to load again.\n\n\n\nUse the controls in the sidebar to explore relationships between penguin measurements. Select variables for the X and Y axes, and filter by species.\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 800\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(echarts4r)\n\n# Load data from CSV (palmerpenguins package not available in shinylive)\npenguins_data &lt;- read.csv(\n  \"https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv\",\n  stringsAsFactors = TRUE\n)\npenguins_data &lt;- penguins_data[complete.cases(penguins_data), ]\n\n# Variable choices\nvar_choices &lt;- c(\n  \"Bill Length (mm)\"    = \"bill_length_mm\",\n  \"Bill Depth (mm)\"    = \"bill_depth_mm\",\n  \"Flipper Length (mm)\" = \"flipper_length_mm\",\n  \"Body Mass (g)\"      = \"body_mass_g\"\n)\n\nspecies_colors &lt;- c(\"#ff6b35\", \"#6c5ce7\", \"#00b894\")\n\nui &lt;- page_sidebar(\n  title = \"Penguin Explorer\",\n  sidebar = sidebar(\n    selectInput(\"x_var\", \"X-Axis Variable\",\n      choices = var_choices, selected = \"bill_length_mm\"),\n    selectInput(\"y_var\", \"Y-Axis Variable\",\n      choices = var_choices, selected = \"body_mass_g\"),\n    checkboxGroupInput(\"species\", \"Species\",\n      choices = c(\"Adelie\", \"Chinstrap\", \"Gentoo\"),\n      selected = c(\"Adelie\", \"Chinstrap\", \"Gentoo\")),\n    hr(),\n    h6(\"Summary Statistics\"),\n    tableOutput(\"summary_table\")\n  ),\n  card(\n    card_header(\"Scatter Plot\"),\n    echarts4rOutput(\"scatter\", height = \"500px\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  filtered_data &lt;- reactive({\n    penguins_data[penguins_data$species %in% input$species, ]\n  })\n\n  output$scatter &lt;- renderEcharts4r({\n    req(nrow(filtered_data()) &gt; 0)\n\n    x_label &lt;- names(var_choices)[var_choices == input$x_var]\n    y_label &lt;- names(var_choices)[var_choices == input$y_var]\n\n    filtered_data() |&gt;\n      group_by(species) |&gt;\n      e_charts_(input$x_var) |&gt;\n      e_scatter_(input$y_var, symbol_size = 8) |&gt;\n      e_tooltip(trigger = \"item\") |&gt;\n      e_x_axis(name = x_label, scale = TRUE) |&gt;\n      e_y_axis(name = y_label, scale = TRUE) |&gt;\n      e_legend(\n        show = TRUE, orient = \"horizontal\",\n        left = \"center\", bottom = 0\n      ) |&gt;\n      e_grid(bottom = 80) |&gt;\n      e_color(species_colors) |&gt;\n      e_color(background = \"transparent\") |&gt;\n      e_toolbox_feature(feature = \"dataZoom\") |&gt;\n      e_toolbox_feature(feature = \"saveAsImage\")\n  })\n\n  output$summary_table &lt;- renderTable({\n    req(nrow(filtered_data()) &gt; 0)\n    data &lt;- filtered_data()\n    data.frame(\n      Species = unique(data$species),\n      Count = tapply(data$species, data$species, length)[unique(data$species)],\n      row.names = NULL\n    )\n  })\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "Explorer"
+    ]
+  },
+  {
+    "objectID": "islands.html",
+    "href": "islands.html",
+    "title": "Island Comparison",
+    "section": "",
+    "text": "Compare penguin populations and measurements across the three islands in the Palmer Archipelago.\n\nSpecies CompositionBill Length vs DepthFlipper vs Mass",
+    "crumbs": [
+      "Island Comparison"
+    ]
+  },
+  {
+    "objectID": "islands.html#data",
+    "href": "islands.html#data",
+    "title": "Island Comparison",
+    "section": "Data",
+    "text": "Data",
+    "crumbs": [
+      "Island Comparison"
+    ]
+  },
+  {
+    "objectID": "species.html",
+    "href": "species.html",
+    "title": "Species Overview",
+    "section": "",
+    "text": "Explore body measurements across the three penguin species.",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#data",
+    "href": "species.html#data",
+    "title": "Species Overview",
+    "section": "Data",
+    "text": "Data",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#bill-length",
+    "href": "species.html#bill-length",
+    "title": "Species Overview",
+    "section": "Bill Length",
+    "text": "Bill Length",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#bill-depth",
+    "href": "species.html#bill-depth",
+    "title": "Species Overview",
+    "section": "Bill Depth",
+    "text": "Bill Depth",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#flipper-length",
+    "href": "species.html#flipper-length",
+    "title": "Species Overview",
+    "section": "Flipper Length",
+    "text": "Flipper Length",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#body-mass",
+    "href": "species.html#body-mass",
+    "title": "Species Overview",
+    "section": "Body Mass",
+    "text": "Body Mass",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
+    "section": "",
+    "text": "Browse and search the full Palmer Penguins dataset. Use the filters and search box to explore.",
+    "crumbs": [
+      "Data"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The Palmer Penguins dataset contains measurements for 342 penguins from three species collected at three islands in the Palmer Archipelago, Antarctica.\n\n\n\nArtwork by Allison Horst\n\n\n\n\n\nNamed for the thin black line running under their chin. Found exclusively on Dream Island.\n\nCount: 68\nIslands: Dream\n\n\n\n\nThe largest of the three species, with distinctive orange bills. Found primarily on Biscoe Island.\n\nCount: 123\nIslands: Biscoe\n\n\n\n\nThe most widespread species, found on all three islands. Characterized by shorter bills and moderate body mass.\n\nCount: 151\nIslands: Biscoe, Dream, Torgersen",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#the-dataset",
+    "href": "about.html#the-dataset",
+    "title": "About",
+    "section": "",
+    "text": "The Palmer Penguins dataset contains measurements for 342 penguins from three species collected at three islands in the Palmer Archipelago, Antarctica.\n\n\n\nArtwork by Allison Horst\n\n\n\n\n\nNamed for the thin black line running under their chin. Found exclusively on Dream Island.\n\nCount: 68\nIslands: Dream\n\n\n\n\nThe largest of the three species, with distinctive orange bills. Found primarily on Biscoe Island.\n\nCount: 123\nIslands: Biscoe\n\n\n\n\nThe most widespread species, found on all three islands. Characterized by shorter bills and moderate body mass.\n\nCount: 151\nIslands: Biscoe, Dream, Torgersen",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#measurements",
+    "href": "about.html#measurements",
+    "title": "About",
+    "section": "Measurements",
+    "text": "Measurements\nThe dataset includes four key body measurements:\n\n\n\nMeasurement\nDescription\n\n\n\n\nBill Length (mm)\nLength of the penguin’s bill (culmen)\n\n\nBill Depth (mm)\nDepth of the penguin’s bill\n\n\nFlipper Length (mm)\nLength of the penguin’s flipper\n\n\nBody Mass (g)\nWeight of the penguin\n\n\n\n\n\n\nArtwork by Allison Horst",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#data-source",
+    "href": "about.html#data-source",
+    "title": "About",
+    "section": "Data Source",
+    "text": "Data Source\nData were collected by Dr. Kristen Gorman at Palmer Station, Antarctica, and made available through the palmerpenguins R package by Allison Horst.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#highlights",
+    "href": "index.html#highlights",
+    "title": "Palmer Penguins Dashboard",
+    "section": "Highlights",
+    "text": "Highlights\n\nStatic output — Renders to plain HTML/CSS/JS, host anywhere\nMultiple tech stacks — R, WebAssembly, and JavaScript side by side\nSidebar navigation — Quarto website project with docked sidebar, tabs, and iframes",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]
