@@ -1,0 +1,23 @@
+Type: Website
+Title: Quarto Dashboard Demo
+Version: 0.0.1
+Authors@R: c(
+    person(given   = "John",
+           family  = "Helveston",
+           role    = c("aut", "cre", "cph"),
+           email   = "john.helveston@gmail.com",
+           comment = c(ORCID = "0000-0002-2657-9191")))
+Depends: R (>= 4.0.2)
+License: CC-BY-SA
+Encoding: UTF-8
+Imports:
+    bslib,
+    echarts4r,
+    dplyr,
+    htmltools,
+    kableExtra,
+    knitr,
+    reactable,
+    rmarkdown,
+    shiny,
+    shinylive (>= 0.3.0)
