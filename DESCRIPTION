@@ -17,6 +17,7 @@ Imports:
     htmltools,
     kableExtra,
     knitr,
+    palmerpenguins,
     reactable,
     rmarkdown,
     shiny,
