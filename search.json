@@ -90,136 +90,6 @@
     ]
   },
   {
-    "objectID": "index.html#the-dataset",
-    "href": "index.html#the-dataset",
-    "title": "Palmer Penguins Dashboard",
-    "section": "The Dataset",
-    "text": "The Dataset\nThe Palmer Penguins dataset contains measurements for 342 penguins from three species collected at three islands in the Palmer Archipelago, Antarctica.\n\n\nAdelie\nThe most widespread species, found on all three islands. Characterized by shorter bills and moderate body mass.\n\nCount: 151\nIslands: Biscoe, Dream, Torgersen\n\n\n\nChinstrap\nNamed for the thin black line running under their chin. Found exclusively on Dream Island.\n\nCount: 68\nIslands: Dream\n\n\n\nGentoo\nThe largest of the three species, with distinctive orange bills. Found primarily on Biscoe Island.\n\nCount: 123\nIslands: Biscoe",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html#measurements",
-    "href": "index.html#measurements",
-    "title": "Palmer Penguins Dashboard",
-    "section": "Measurements",
-    "text": "Measurements\nThe dataset includes four key body measurements:\n\n\n\nMeasurement\nDescription\n\n\n\n\nBill Length (mm)\nLength of the penguin’s bill\n\n\nBill Depth (mm)\nDepth of the penguin’s bill\n\n\nFlipper Length (mm)\nLength of the penguin’s flipper\n\n\nBody Mass (g)\nWeight of the penguin",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html#explore",
-    "href": "index.html#explore",
-    "title": "Palmer Penguins Dashboard",
-    "section": "Explore",
-    "text": "Explore\nUse the sidebar to navigate:\n\nAbout — The Palmer Penguins dataset and species\nSpecies Overview — Boxplots of body measurements\nIsland Comparison — Scatter plots and composition charts\nExplorer — Interactive Shinylive app\nD3 Visualization — React + D3 waffle chart\nData — Browse the full dataset\nTech Stack — How it was built",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#data-source",
-    "href": "index.html#data-source",
-    "title": "Palmer Penguins Dashboard",
-    "section": "Data Source",
-    "text": "Data Source\nData were collected by Dr. Kristen Gorman at Palmer Station, Antarctica, and made available through the palmerpenguins R package by Allison Horst.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "explorer.html",
-    "href": "explorer.html",
-    "title": "Interactive Explorer",
-    "section": "",
-    "text": "This page contains interactive content that may take a moment to load, please be patient. If you refresh this page, it will have to load again.\n\n\n\nUse the controls in the sidebar to explore relationships between penguin measurements. Select variables for the X and Y axes, and filter by species.\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 800\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(echarts4r)\n\n# Load data from CSV (palmerpenguins package not available in shinylive)\npenguins_data &lt;- read.csv(\n  \"https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv\",\n  stringsAsFactors = TRUE\n)\npenguins_data &lt;- penguins_data[complete.cases(penguins_data), ]\n\n# Variable choices\nvar_choices &lt;- c(\n  \"Bill Length (mm)\"    = \"bill_length_mm\",\n  \"Bill Depth (mm)\"    = \"bill_depth_mm\",\n  \"Flipper Length (mm)\" = \"flipper_length_mm\",\n  \"Body Mass (g)\"      = \"body_mass_g\"\n)\n\nspecies_colors &lt;- c(\"#ff6b35\", \"#6c5ce7\", \"#00b894\")\n\nui &lt;- page_sidebar(\n  title = \"Penguin Explorer\",\n  sidebar = sidebar(\n    selectInput(\"x_var\", \"X-Axis Variable\",\n      choices = var_choices, selected = \"bill_length_mm\"),\n    selectInput(\"y_var\", \"Y-Axis Variable\",\n      choices = var_choices, selected = \"body_mass_g\"),\n    checkboxGroupInput(\"species\", \"Species\",\n      choices = c(\"Adelie\", \"Chinstrap\", \"Gentoo\"),\n      selected = c(\"Adelie\", \"Chinstrap\", \"Gentoo\")),\n    hr(),\n    h6(\"Summary Statistics\"),\n    tableOutput(\"summary_table\")\n  ),\n  card(\n    card_header(\"Scatter Plot\"),\n    echarts4rOutput(\"scatter\", height = \"500px\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  filtered_data &lt;- reactive({\n    penguins_data[penguins_data$species %in% input$species, ]\n  })\n\n  output$scatter &lt;- renderEcharts4r({\n    req(nrow(filtered_data()) &gt; 0)\n\n    x_label &lt;- names(var_choices)[var_choices == input$x_var]\n    y_label &lt;- names(var_choices)[var_choices == input$y_var]\n\n    filtered_data() |&gt;\n      group_by(species) |&gt;\n      e_charts_(input$x_var) |&gt;\n      e_scatter_(input$y_var, symbol_size = 8) |&gt;\n      e_tooltip(trigger = \"item\") |&gt;\n      e_x_axis(name = x_label, scale = TRUE) |&gt;\n      e_y_axis(name = y_label, scale = TRUE) |&gt;\n      e_legend(\n        show = TRUE, orient = \"horizontal\",\n        left = \"center\", bottom = 0\n      ) |&gt;\n      e_grid(bottom = 80) |&gt;\n      e_color(species_colors) |&gt;\n      e_color(background = \"transparent\") |&gt;\n      e_toolbox_feature(feature = \"dataZoom\") |&gt;\n      e_toolbox_feature(feature = \"saveAsImage\")\n  })\n\n  output$summary_table &lt;- renderTable({\n    req(nrow(filtered_data()) &gt; 0)\n    data &lt;- filtered_data()\n    data.frame(\n      Species = unique(data$species),\n      Count = tapply(data$species, data$species, length)[unique(data$species)],\n      row.names = NULL\n    )\n  })\n}\n\nshinyApp(ui, server)",
-    "crumbs": [
-      "Explorer"
-    ]
-  },
-  {
-    "objectID": "islands.html",
-    "href": "islands.html",
-    "title": "Island Comparison",
-    "section": "",
-    "text": "Compare penguin populations and measurements across the three islands in the Palmer Archipelago.\n\nSpecies CompositionBill Length vs DepthFlipper vs Mass",
-    "crumbs": [
-      "Island Comparison"
-    ]
-  },
-  {
-    "objectID": "islands.html#data",
-    "href": "islands.html#data",
-    "title": "Island Comparison",
-    "section": "Data",
-    "text": "Data",
-    "crumbs": [
-      "Island Comparison"
-    ]
-  },
-  {
-    "objectID": "species.html",
-    "href": "species.html",
-    "title": "Species Overview",
-    "section": "",
-    "text": "Explore body measurements across the three penguin species.",
-    "crumbs": [
-      "Species Overview"
-    ]
-  },
-  {
-    "objectID": "species.html#data",
-    "href": "species.html#data",
-    "title": "Species Overview",
-    "section": "Data",
-    "text": "Data",
-    "crumbs": [
-      "Species Overview"
-    ]
-  },
-  {
-    "objectID": "species.html#bill-length",
-    "href": "species.html#bill-length",
-    "title": "Species Overview",
-    "section": "Bill Length",
-    "text": "Bill Length",
-    "crumbs": [
-      "Species Overview"
-    ]
-  },
-  {
-    "objectID": "species.html#bill-depth",
-    "href": "species.html#bill-depth",
-    "title": "Species Overview",
-    "section": "Bill Depth",
-    "text": "Bill Depth",
-    "crumbs": [
-      "Species Overview"
-    ]
-  },
-  {
-    "objectID": "species.html#flipper-length",
-    "href": "species.html#flipper-length",
-    "title": "Species Overview",
-    "section": "Flipper Length",
-    "text": "Flipper Length",
-    "crumbs": [
-      "Species Overview"
-    ]
-  },
-  {
-    "objectID": "species.html#body-mass",
-    "href": "species.html#body-mass",
-    "title": "Species Overview",
-    "section": "Body Mass",
-    "text": "Body Mass",
-    "crumbs": [
-      "Species Overview"
-    ]
-  },
-  {
     "objectID": "data.html",
     "href": "data.html",
     "title": "Data",
@@ -270,13 +140,80 @@
     ]
   },
   {
-    "objectID": "index.html#highlights",
-    "href": "index.html#highlights",
+    "objectID": "chunks/loading-notice.html",
+    "href": "chunks/loading-notice.html",
     "title": "Palmer Penguins Dashboard",
-    "section": "Highlights",
-    "text": "Highlights\n\nStatic output — Renders to plain HTML/CSS/JS, host anywhere\nMultiple tech stacks — R, WebAssembly, and JavaScript side by side\nSidebar navigation — Quarto website project with docked sidebar, tabs, and iframes",
+    "section": "",
+    "text": "This page contains interactive content that may take a moment to load, please be patient. If you refresh this page, it will have to load again."
+  },
+  {
+    "objectID": "explorer.html",
+    "href": "explorer.html",
+    "title": "Interactive Explorer",
+    "section": "",
+    "text": "This page contains interactive content that may take a moment to load, please be patient. If you refresh this page, it will have to load again.\n\n\n\nUse the controls in the sidebar to explore relationships between penguin measurements. Select variables for the X and Y axes, and filter by species.\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 800\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(echarts4r)\n\n# Load data from CSV (palmerpenguins package not available in shinylive)\npenguins_data &lt;- read.csv(\n  \"https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv\",\n  stringsAsFactors = TRUE\n)\npenguins_data &lt;- penguins_data[complete.cases(penguins_data), ]\n\n# Variable choices\nvar_choices &lt;- c(\n  \"Bill Length (mm)\"    = \"bill_length_mm\",\n  \"Bill Depth (mm)\"    = \"bill_depth_mm\",\n  \"Flipper Length (mm)\" = \"flipper_length_mm\",\n  \"Body Mass (g)\"      = \"body_mass_g\"\n)\n\nspecies_colors &lt;- c(\"#ff6b35\", \"#6c5ce7\", \"#00b894\")\n\nui &lt;- page_sidebar(\n  title = \"Penguin Explorer\",\n  sidebar = sidebar(\n    selectInput(\"x_var\", \"X-Axis Variable\",\n      choices = var_choices, selected = \"bill_length_mm\"),\n    selectInput(\"y_var\", \"Y-Axis Variable\",\n      choices = var_choices, selected = \"body_mass_g\"),\n    checkboxGroupInput(\"species\", \"Species\",\n      choices = c(\"Adelie\", \"Chinstrap\", \"Gentoo\"),\n      selected = c(\"Adelie\", \"Chinstrap\", \"Gentoo\")),\n    hr(),\n    h6(\"Summary Statistics\"),\n    tableOutput(\"summary_table\")\n  ),\n  card(\n    card_header(\"Scatter Plot\"),\n    echarts4rOutput(\"scatter\", height = \"500px\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  filtered_data &lt;- reactive({\n    penguins_data[penguins_data$species %in% input$species, ]\n  })\n\n  output$scatter &lt;- renderEcharts4r({\n    req(nrow(filtered_data()) &gt; 0)\n\n    x_label &lt;- names(var_choices)[var_choices == input$x_var]\n    y_label &lt;- names(var_choices)[var_choices == input$y_var]\n\n    filtered_data() |&gt;\n      group_by(species) |&gt;\n      e_charts_(input$x_var) |&gt;\n      e_scatter_(input$y_var, symbol_size = 8) |&gt;\n      e_tooltip(trigger = \"item\") |&gt;\n      e_x_axis(name = x_label, scale = TRUE) |&gt;\n      e_y_axis(name = y_label, scale = TRUE) |&gt;\n      e_legend(\n        show = TRUE, orient = \"horizontal\",\n        left = \"center\", bottom = 0\n      ) |&gt;\n      e_grid(bottom = 80) |&gt;\n      e_color(species_colors) |&gt;\n      e_color(background = \"transparent\") |&gt;\n      e_toolbox_feature(feature = \"dataZoom\") |&gt;\n      e_toolbox_feature(feature = \"saveAsImage\")\n  })\n\n  output$summary_table &lt;- renderTable({\n    req(nrow(filtered_data()) &gt; 0)\n    data &lt;- filtered_data()\n    data.frame(\n      Species = unique(data$species),\n      Count = tapply(data$species, data$species, length)[unique(data$species)],\n      row.names = NULL\n    )\n  })\n}\n\nshinyApp(ui, server)",
     "crumbs": [
-      "Home"
+      "Explorer"
+    ]
+  },
+  {
+    "objectID": "islands.html",
+    "href": "islands.html",
+    "title": "Island Comparison",
+    "section": "",
+    "text": "Compare penguin populations and measurements across the three islands in the Palmer Archipelago.\n\nSpecies CompositionBill Length vs DepthFlipper vs Mass",
+    "crumbs": [
+      "Island Comparison"
+    ]
+  },
+  {
+    "objectID": "species.html",
+    "href": "species.html",
+    "title": "Species Overview",
+    "section": "",
+    "text": "Explore body measurements across the three penguin species.",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#bill-length",
+    "href": "species.html#bill-length",
+    "title": "Species Overview",
+    "section": "Bill Length",
+    "text": "Bill Length",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#bill-depth",
+    "href": "species.html#bill-depth",
+    "title": "Species Overview",
+    "section": "Bill Depth",
+    "text": "Bill Depth",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#flipper-length",
+    "href": "species.html#flipper-length",
+    "title": "Species Overview",
+    "section": "Flipper Length",
+    "text": "Flipper Length",
+    "crumbs": [
+      "Species Overview"
+    ]
+  },
+  {
+    "objectID": "species.html#body-mass",
+    "href": "species.html#body-mass",
+    "title": "Species Overview",
+    "section": "Body Mass",
+    "text": "Body Mass",
+    "crumbs": [
+      "Species Overview"
     ]
   }
 ]

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Palmer Penguins Dashboard - Island Comparison</title>
+<title>Island Comparison – Palmer Penguins Dashboard</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,15 +31,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f8a7aab52b8a308157d0405d07fe4a06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,30 +70,30 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script>
-<script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script>
-<script src="site_libs/echarts4r-4.8.0/dataTool.min.js"></script>
-<script src="site_libs/echarts4r-binding-0.4.6/echarts4r.js"></script>
+<script src="site_libs/echarts4r-6.0.0/echarts.min.js"></script>
+<script src="site_libs/echarts4r-6.0.0/ecStat.min.js"></script>
+<script src="site_libs/echarts4r-6.0.0/dataTool.min.js"></script>
+<script src="site_libs/echarts4r-binding-0.5.0/echarts4r.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./islands.html">Island Comparison</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -103,7 +105,8 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -201,53 +204,53 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Compare penguin populations and measurements across the three islands in the Palmer Archipelago.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Species Composition</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Bill Length vs Depth</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Flipper vs Mass</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Species Composition</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Bill Length vs Depth</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Flipper vs Mass</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-b1e5648afd897bbcfd52" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-b1e5648afd897bbcfd52">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Count"}],"xAxis":[{"data":["Biscoe","Dream","Torgersen"],"type":"category","boundaryGap":true,"name":"Island"}],"legend":{"data":["Adelie","Chinstrap","Gentoo"],"show":true,"type":"plain","orient":"horizontal","left":"center","bottom":0},"series":[{"data":[{"value":["Biscoe","44"]},{"value":["Dream","56"]},{"value":["Torgersen","51"]}],"name":"Adelie","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","stack":"total"},{"data":[{"value":["Biscoe"," 0"]},{"value":["Dream","68"]},{"value":["Torgersen"," 0"]}],"name":"Chinstrap","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","stack":"total"},{"data":[{"value":["Biscoe","123"]},{"value":["Dream","  0"]},{"value":["Torgersen","  0"]}],"name":"Gentoo","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","stack":"total"}],"tooltip":{"trigger":"axis"},"title":[{"text":"Species Composition by Island"}],"grid":[{"bottom":80}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-6e0b70b228dfb05a80ef" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-6e0b70b228dfb05a80ef">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Count"}],"xAxis":[{"data":["Biscoe","Dream","Torgersen"],"type":"category","boundaryGap":true,"name":"Island"}],"legend":{"data":["Adelie","Chinstrap","Gentoo"],"show":true,"type":"plain","orient":"horizontal","left":"center","bottom":0},"series":[{"data":[{"value":["Biscoe","44"]},{"value":["Dream","56"]},{"value":["Torgersen","51"]}],"name":"Adelie","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","stack":"total"},{"data":[{"value":["Biscoe"," 0"]},{"value":["Dream","68"]},{"value":["Torgersen"," 0"]}],"name":"Chinstrap","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","stack":"total"},{"data":[{"value":["Biscoe","123"]},{"value":["Dream","  0"]},{"value":["Torgersen","  0"]}],"name":"Gentoo","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","stack":"total"}],"tooltip":{"trigger":"axis"},"title":[{"text":"Species Composition by Island"}],"grid":[{"bottom":80}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-e3237df0a7ac366f9c7a" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e3237df0a7ac366f9c7a">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Bill Depth (mm)","scale":true}],"xAxis":[{"type":"value","name":"Bill Length (mm)","scale":true}],"legend":{"data":["Adelie","Gentoo"]},"series":[{"data":[{"value":[34.5,18.1]},{"value":[35,17.9]},{"value":[35,17.9]},{"value":[35.3,18.9]},{"value":[35.5,16.2]},{"value":[35.7,16.9]},{"value":[35.9,19.2]},{"value":[36.4,17.1]},{"value":[36.5,16.6]},{"value":[37.6,19.1]},{"value":[37.6,17]},{"value":[37.7,18.7]},{"value":[37.7,16]},{"value":[37.8,18.3]},{"value":[37.8,20]},{"value":[37.9,18.6]},{"value":[37.9,18.6]},{"value":[38.1,17]},{"value":[38.1,16.5]},{"value":[38.2,18.1]},{"value":[38.2,20]},{"value":[38.6,17.2]},{"value":[38.8,17.2]},{"value":[39,17.5]},{"value":[39.6,17.7]},{"value":[39.6,20.7]},{"value":[39.7,18.9]},{"value":[39.7,17.7]},{"value":[40.1,18.9]},{"value":[40.5,17.9]},{"value":[40.5,18.9]},{"value":[40.6,18.6]},{"value":[40.6,18.8]},{"value":[41,20]},{"value":[41.1,18.2]},{"value":[41.1,19.1]},{"value":[41.3,21.1]},{"value":[41.4,18.6]},{"value":[41.6,18]},{"value":[42,19.5]},{"value":[42.2,19.5]},{"value":[42.7,18.3]},{"value":[43.2,19]},{"value":[45.6,20.3]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[40.9,13.7]},{"value":[41.7,14.7]},{"value":[42,13.5]},{"value":[42.6,13.7]},{"value":[42.7,13.7]},{"value":[42.8,14.2]},{"value":[42.9,13.1]},{"value":[43.2,14.5]},{"value":[43.3,13.4]},{"value":[43.3,14]},{"value":[43.4,14.4]},{"value":[43.5,14.2]},{"value":[43.5,15.2]},{"value":[43.6,13.9]},{"value":[43.8,13.9]},{"value":[44,13.6]},{"value":[44.4,17.3]},{"value":[44.5,14.3]},{"value":[44.5,14.7]},{"value":[44.5,15.7]},{"value":[44.9,13.3]},{"value":[44.9,13.8]},{"value":[45,15.4]},{"value":[45.1,14.5]},{"value":[45.1,14.5]},{"value":[45.1,14.4]},{"value":[45.2,15.8]},{"value":[45.2,13.8]},{"value":[45.2,16.4]},{"value":[45.2,14.8]},{"value":[45.3,13.7]},{"value":[45.3,13.8]},{"value":[45.4,14.6]},{"value":[45.5,13.7]},{"value":[45.5,13.9]},{"value":[45.5,15]},{"value":[45.5,14.5]},{"value":[45.7,13.9]},{"value":[45.8,14.6]},{"value":[45.8,14.2]},{"value":[46.1,13.2]},{"value":[46.1,15.1]},{"value":[46.2,14.5]},{"value":[46.2,14.9]},{"value":[46.2,14.4]},{"value":[46.2,14.1]},{"value":[46.3,15.8]},{"value":[46.4,15.6]},{"value":[46.4,15]},{"value":[46.5,13.5]},{"value":[46.5,14.5]},{"value":[46.5,14.4]},{"value":[46.5,14.8]},{"value":[46.6,14.2]},{"value":[46.7,15.3]},{"value":[46.8,15.4]},{"value":[46.8,16.1]},{"value":[46.8,14.3]},{"value":[46.9,14.6]},{"value":[47.2,15.5]},{"value":[47.2,13.7]},{"value":[47.3,15.3]},{"value":[47.3,13.8]},{"value":[47.4,14.6]},{"value":[47.5,14.2]},{"value":[47.5,14]},{"value":[47.5,15]},{"value":[47.6,14.5]},{"value":[47.7,15]},{"value":[47.8,15]},{"value":[48.1,15.1]},{"value":[48.2,14.3]},{"value":[48.2,15.6]},{"value":[48.4,14.6]},{"value":[48.4,16.3]},{"value":[48.4,14.4]},{"value":[48.5,14.1]},{"value":[48.5,15]},{"value":[48.6,16]},{"value":[48.7,14.1]},{"value":[48.7,15.1]},{"value":[48.7,15.7]},{"value":[48.8,16.2]},{"value":[49,16.1]},{"value":[49.1,14.8]},{"value":[49.1,14.5]},{"value":[49.1,15]},{"value":[49.2,15.2]},{"value":[49.3,15.7]},{"value":[49.4,15.8]},{"value":[49.5,16.2]},{"value":[49.5,16.1]},{"value":[49.6,16]},{"value":[49.6,15]},{"value":[49.8,16.8]},{"value":[49.8,15.9]},{"value":[49.9,16.1]},{"value":[50,16.3]},{"value":[50,15.2]},{"value":[50,15.3]},{"value":[50,15.9]},{"value":[50.1,15]},{"value":[50.2,14.3]},{"value":[50.4,15.3]},{"value":[50.4,15.7]},{"value":[50.5,15.9]},{"value":[50.5,15.9]},{"value":[50.5,15.2]},{"value":[50.7,15]},{"value":[50.8,17.3]},{"value":[50.8,15.7]},{"value":[51.1,16.3]},{"value":[51.1,16.5]},{"value":[51.3,14.2]},{"value":[51.5,16.3]},{"value":[52.1,17]},{"value":[52.2,17.1]},{"value":[52.5,15.6]},{"value":[53.4,15.8]},{"value":[54.3,15.7]},{"value":[55.1,16]},{"value":[55.9,17]},{"value":[59.6,17]}],"name":"Gentoo","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Biscoe Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-602e0072ea6364398003" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-602e0072ea6364398003">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Bill Depth (mm)","scale":true}],"xAxis":[{"type":"value","name":"Bill Length (mm)","scale":true}],"legend":{"data":["Adelie","Gentoo"]},"series":[{"data":[{"value":[34.5,18.1]},{"value":[35,17.9]},{"value":[35,17.9]},{"value":[35.3,18.9]},{"value":[35.5,16.2]},{"value":[35.7,16.9]},{"value":[35.9,19.2]},{"value":[36.4,17.1]},{"value":[36.5,16.6]},{"value":[37.6,19.1]},{"value":[37.6,17]},{"value":[37.7,18.7]},{"value":[37.7,16]},{"value":[37.8,18.3]},{"value":[37.8,20]},{"value":[37.9,18.6]},{"value":[37.9,18.6]},{"value":[38.1,17]},{"value":[38.1,16.5]},{"value":[38.2,18.1]},{"value":[38.2,20]},{"value":[38.6,17.2]},{"value":[38.8,17.2]},{"value":[39,17.5]},{"value":[39.6,17.7]},{"value":[39.6,20.7]},{"value":[39.7,18.9]},{"value":[39.7,17.7]},{"value":[40.1,18.9]},{"value":[40.5,17.9]},{"value":[40.5,18.9]},{"value":[40.6,18.6]},{"value":[40.6,18.8]},{"value":[41,20]},{"value":[41.1,18.2]},{"value":[41.1,19.1]},{"value":[41.3,21.1]},{"value":[41.4,18.6]},{"value":[41.6,18]},{"value":[42,19.5]},{"value":[42.2,19.5]},{"value":[42.7,18.3]},{"value":[43.2,19]},{"value":[45.6,20.3]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[40.9,13.7]},{"value":[41.7,14.7]},{"value":[42,13.5]},{"value":[42.6,13.7]},{"value":[42.7,13.7]},{"value":[42.8,14.2]},{"value":[42.9,13.1]},{"value":[43.2,14.5]},{"value":[43.3,13.4]},{"value":[43.3,14]},{"value":[43.4,14.4]},{"value":[43.5,14.2]},{"value":[43.5,15.2]},{"value":[43.6,13.9]},{"value":[43.8,13.9]},{"value":[44,13.6]},{"value":[44.4,17.3]},{"value":[44.5,14.3]},{"value":[44.5,14.7]},{"value":[44.5,15.7]},{"value":[44.9,13.3]},{"value":[44.9,13.8]},{"value":[45,15.4]},{"value":[45.1,14.5]},{"value":[45.1,14.5]},{"value":[45.1,14.4]},{"value":[45.2,15.8]},{"value":[45.2,13.8]},{"value":[45.2,16.4]},{"value":[45.2,14.8]},{"value":[45.3,13.7]},{"value":[45.3,13.8]},{"value":[45.4,14.6]},{"value":[45.5,13.7]},{"value":[45.5,13.9]},{"value":[45.5,15]},{"value":[45.5,14.5]},{"value":[45.7,13.9]},{"value":[45.8,14.6]},{"value":[45.8,14.2]},{"value":[46.1,13.2]},{"value":[46.1,15.1]},{"value":[46.2,14.5]},{"value":[46.2,14.9]},{"value":[46.2,14.4]},{"value":[46.2,14.1]},{"value":[46.3,15.8]},{"value":[46.4,15.6]},{"value":[46.4,15]},{"value":[46.5,13.5]},{"value":[46.5,14.5]},{"value":[46.5,14.4]},{"value":[46.5,14.8]},{"value":[46.6,14.2]},{"value":[46.7,15.3]},{"value":[46.8,15.4]},{"value":[46.8,16.1]},{"value":[46.8,14.3]},{"value":[46.9,14.6]},{"value":[47.2,15.5]},{"value":[47.2,13.7]},{"value":[47.3,15.3]},{"value":[47.3,13.8]},{"value":[47.4,14.6]},{"value":[47.5,14.2]},{"value":[47.5,14]},{"value":[47.5,15]},{"value":[47.6,14.5]},{"value":[47.7,15]},{"value":[47.8,15]},{"value":[48.1,15.1]},{"value":[48.2,14.3]},{"value":[48.2,15.6]},{"value":[48.4,14.6]},{"value":[48.4,16.3]},{"value":[48.4,14.4]},{"value":[48.5,14.1]},{"value":[48.5,15]},{"value":[48.6,16]},{"value":[48.7,14.1]},{"value":[48.7,15.1]},{"value":[48.7,15.7]},{"value":[48.8,16.2]},{"value":[49,16.1]},{"value":[49.1,14.8]},{"value":[49.1,14.5]},{"value":[49.1,15]},{"value":[49.2,15.2]},{"value":[49.3,15.7]},{"value":[49.4,15.8]},{"value":[49.5,16.2]},{"value":[49.5,16.1]},{"value":[49.6,16]},{"value":[49.6,15]},{"value":[49.8,16.8]},{"value":[49.8,15.9]},{"value":[49.9,16.1]},{"value":[50,16.3]},{"value":[50,15.2]},{"value":[50,15.3]},{"value":[50,15.9]},{"value":[50.1,15]},{"value":[50.2,14.3]},{"value":[50.4,15.3]},{"value":[50.4,15.7]},{"value":[50.5,15.9]},{"value":[50.5,15.9]},{"value":[50.5,15.2]},{"value":[50.7,15]},{"value":[50.8,17.3]},{"value":[50.8,15.7]},{"value":[51.1,16.3]},{"value":[51.1,16.5]},{"value":[51.3,14.2]},{"value":[51.5,16.3]},{"value":[52.1,17]},{"value":[52.2,17.1]},{"value":[52.5,15.6]},{"value":[53.4,15.8]},{"value":[54.3,15.7]},{"value":[55.1,16]},{"value":[55.9,17]},{"value":[59.6,17]}],"name":"Gentoo","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Biscoe Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-23f28bf50eb92a7e694f" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-23f28bf50eb92a7e694f">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Bill Depth (mm)","scale":true}],"xAxis":[{"type":"value","name":"Bill Length (mm)","scale":true}],"legend":{"data":["Adelie","Chinstrap"]},"series":[{"data":[{"value":[32.1,15.5]},{"value":[33.1,16.1]},{"value":[34,17.1]},{"value":[35.6,17.5]},{"value":[35.7,18]},{"value":[36,18.5]},{"value":[36,17.9]},{"value":[36,17.8]},{"value":[36,17.1]},{"value":[36.2,17.3]},{"value":[36.3,19.5]},{"value":[36.4,17]},{"value":[36.5,18]},{"value":[36.6,18.4]},{"value":[36.8,18.5]},{"value":[36.9,18.6]},{"value":[37,16.9]},{"value":[37,16.5]},{"value":[37.2,18.1]},{"value":[37.3,17.8]},{"value":[37.3,16.8]},{"value":[37.5,18.9]},{"value":[37.5,18.5]},{"value":[37.6,19.3]},{"value":[37.8,18.1]},{"value":[38.1,18.6]},{"value":[38.1,17.6]},{"value":[38.3,19.2]},{"value":[38.8,20]},{"value":[38.9,18.8]},{"value":[39,18.7]},{"value":[39.2,21.1]},{"value":[39.2,18.6]},{"value":[39.5,16.7]},{"value":[39.5,17.8]},{"value":[39.6,18.8]},{"value":[39.6,18.1]},{"value":[39.7,17.9]},{"value":[39.8,19.1]},{"value":[40.2,20.1]},{"value":[40.2,17.1]},{"value":[40.3,18.5]},{"value":[40.6,17.2]},{"value":[40.7,17]},{"value":[40.8,18.4]},{"value":[40.8,18.9]},{"value":[40.9,18.9]},{"value":[41.1,19]},{"value":[41.1,18.1]},{"value":[41.1,17.5]},{"value":[41.3,20.3]},{"value":[41.5,18.5]},{"value":[42.2,18.5]},{"value":[42.3,21.2]},{"value":[43.2,18.5]},{"value":[44.1,19.7]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[40.9,16.6]},{"value":[42.4,17.3]},{"value":[42.5,16.7]},{"value":[42.5,17.3]},{"value":[43.2,16.6]},{"value":[43.5,18.1]},{"value":[45.2,17.8]},{"value":[45.2,16.6]},{"value":[45.4,18.7]},{"value":[45.5,17]},{"value":[45.6,19.4]},{"value":[45.7,17.3]},{"value":[45.7,17]},{"value":[45.9,17.1]},{"value":[46,18.9]},{"value":[46.1,18.2]},{"value":[46.2,17.5]},{"value":[46.4,18.6]},{"value":[46.4,17.8]},{"value":[46.5,17.9]},{"value":[46.6,17.8]},{"value":[46.7,17.9]},{"value":[46.8,16.5]},{"value":[46.9,16.6]},{"value":[47,17.3]},{"value":[47.5,16.8]},{"value":[47.6,18.3]},{"value":[48.1,16.4]},{"value":[48.5,17.5]},{"value":[49,19.5]},{"value":[49,19.6]},{"value":[49.2,18.2]},{"value":[49.3,19.9]},{"value":[49.5,19]},{"value":[49.6,18.2]},{"value":[49.7,18.6]},{"value":[49.8,17.3]},{"value":[50,19.5]},{"value":[50.1,17.9]},{"value":[50.2,18.8]},{"value":[50.2,18.7]},{"value":[50.3,20]},{"value":[50.5,19.6]},{"value":[50.5,18.4]},{"value":[50.6,19.4]},{"value":[50.7,19.7]},{"value":[50.8,18.5]},{"value":[50.8,19]},{"value":[50.9,19.1]},{"value":[50.9,17.9]},{"value":[51,18.8]},{"value":[51.3,19.2]},{"value":[51.3,18.2]},{"value":[51.3,19.9]},{"value":[51.4,19]},{"value":[51.5,18.7]},{"value":[51.7,20.3]},{"value":[51.9,19.5]},{"value":[52,18.1]},{"value":[52,19]},{"value":[52,20.7]},{"value":[52.2,18.8]},{"value":[52.7,19.8]},{"value":[52.8,20]},{"value":[53.5,19.9]},{"value":[54.2,20.8]},{"value":[55.8,19.8]},{"value":[58,17.8]}],"name":"Chinstrap","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Dream Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4f177d595d5f0a708772" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4f177d595d5f0a708772">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Bill Depth (mm)","scale":true}],"xAxis":[{"type":"value","name":"Bill Length (mm)","scale":true}],"legend":{"data":["Adelie","Chinstrap"]},"series":[{"data":[{"value":[32.1,15.5]},{"value":[33.1,16.1]},{"value":[34,17.1]},{"value":[35.6,17.5]},{"value":[35.7,18]},{"value":[36,18.5]},{"value":[36,17.9]},{"value":[36,17.8]},{"value":[36,17.1]},{"value":[36.2,17.3]},{"value":[36.3,19.5]},{"value":[36.4,17]},{"value":[36.5,18]},{"value":[36.6,18.4]},{"value":[36.8,18.5]},{"value":[36.9,18.6]},{"value":[37,16.9]},{"value":[37,16.5]},{"value":[37.2,18.1]},{"value":[37.3,17.8]},{"value":[37.3,16.8]},{"value":[37.5,18.9]},{"value":[37.5,18.5]},{"value":[37.6,19.3]},{"value":[37.8,18.1]},{"value":[38.1,18.6]},{"value":[38.1,17.6]},{"value":[38.3,19.2]},{"value":[38.8,20]},{"value":[38.9,18.8]},{"value":[39,18.7]},{"value":[39.2,21.1]},{"value":[39.2,18.6]},{"value":[39.5,16.7]},{"value":[39.5,17.8]},{"value":[39.6,18.8]},{"value":[39.6,18.1]},{"value":[39.7,17.9]},{"value":[39.8,19.1]},{"value":[40.2,20.1]},{"value":[40.2,17.1]},{"value":[40.3,18.5]},{"value":[40.6,17.2]},{"value":[40.7,17]},{"value":[40.8,18.4]},{"value":[40.8,18.9]},{"value":[40.9,18.9]},{"value":[41.1,19]},{"value":[41.1,18.1]},{"value":[41.1,17.5]},{"value":[41.3,20.3]},{"value":[41.5,18.5]},{"value":[42.2,18.5]},{"value":[42.3,21.2]},{"value":[43.2,18.5]},{"value":[44.1,19.7]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[40.9,16.6]},{"value":[42.4,17.3]},{"value":[42.5,16.7]},{"value":[42.5,17.3]},{"value":[43.2,16.6]},{"value":[43.5,18.1]},{"value":[45.2,17.8]},{"value":[45.2,16.6]},{"value":[45.4,18.7]},{"value":[45.5,17]},{"value":[45.6,19.4]},{"value":[45.7,17.3]},{"value":[45.7,17]},{"value":[45.9,17.1]},{"value":[46,18.9]},{"value":[46.1,18.2]},{"value":[46.2,17.5]},{"value":[46.4,18.6]},{"value":[46.4,17.8]},{"value":[46.5,17.9]},{"value":[46.6,17.8]},{"value":[46.7,17.9]},{"value":[46.8,16.5]},{"value":[46.9,16.6]},{"value":[47,17.3]},{"value":[47.5,16.8]},{"value":[47.6,18.3]},{"value":[48.1,16.4]},{"value":[48.5,17.5]},{"value":[49,19.5]},{"value":[49,19.6]},{"value":[49.2,18.2]},{"value":[49.3,19.9]},{"value":[49.5,19]},{"value":[49.6,18.2]},{"value":[49.7,18.6]},{"value":[49.8,17.3]},{"value":[50,19.5]},{"value":[50.1,17.9]},{"value":[50.2,18.8]},{"value":[50.2,18.7]},{"value":[50.3,20]},{"value":[50.5,19.6]},{"value":[50.5,18.4]},{"value":[50.6,19.4]},{"value":[50.7,19.7]},{"value":[50.8,18.5]},{"value":[50.8,19]},{"value":[50.9,19.1]},{"value":[50.9,17.9]},{"value":[51,18.8]},{"value":[51.3,19.2]},{"value":[51.3,18.2]},{"value":[51.3,19.9]},{"value":[51.4,19]},{"value":[51.5,18.7]},{"value":[51.7,20.3]},{"value":[51.9,19.5]},{"value":[52,18.1]},{"value":[52,19]},{"value":[52,20.7]},{"value":[52.2,18.8]},{"value":[52.7,19.8]},{"value":[52.8,20]},{"value":[53.5,19.9]},{"value":[54.2,20.8]},{"value":[55.8,19.8]},{"value":[58,17.8]}],"name":"Chinstrap","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Dream Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-61010132ab3e3fcede47" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-61010132ab3e3fcede47">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Bill Depth (mm)","scale":true}],"xAxis":[{"type":"value","name":"Bill Length (mm)","scale":true}],"legend":{"data":["Adelie"]},"series":[{"data":[{"value":[33.5,19]},{"value":[34.1,18.1]},{"value":[34.4,18.4]},{"value":[34.6,21.1]},{"value":[34.6,17.2]},{"value":[35.1,19.4]},{"value":[35.2,15.9]},{"value":[35.5,17.5]},{"value":[35.7,17]},{"value":[35.9,16.6]},{"value":[36.2,16.1]},{"value":[36.2,17.2]},{"value":[36.6,17.8]},{"value":[36.7,19.3]},{"value":[36.7,18.8]},{"value":[37.2,19.4]},{"value":[37.3,20.5]},{"value":[37.7,19.8]},{"value":[37.8,17.1]},{"value":[37.8,17.3]},{"value":[38.5,17.9]},{"value":[38.6,21.2]},{"value":[38.6,17]},{"value":[38.7,19]},{"value":[38.8,17.6]},{"value":[38.9,17.8]},{"value":[39,17.1]},{"value":[39.1,18.7]},{"value":[39.2,19.6]},{"value":[39.3,20.6]},{"value":[39.5,17.4]},{"value":[39.6,17.2]},{"value":[39.7,18.4]},{"value":[40.2,17]},{"value":[40.3,18]},{"value":[40.6,19]},{"value":[40.9,16.8]},{"value":[41.1,17.6]},{"value":[41.1,18.6]},{"value":[41.4,18.5]},{"value":[41.5,18.3]},{"value":[41.8,19.4]},{"value":[42,20.2]},{"value":[42.1,19.1]},{"value":[42.5,20.7]},{"value":[42.8,18.5]},{"value":[42.9,17.6]},{"value":[43.1,19.2]},{"value":[44.1,18]},{"value":[45.8,18.9]},{"value":[46,21.5]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Torgersen Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2f43bd35fa6cfe4e9f3a" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2f43bd35fa6cfe4e9f3a">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Bill Depth (mm)","scale":true}],"xAxis":[{"type":"value","name":"Bill Length (mm)","scale":true}],"legend":{"data":["Adelie"]},"series":[{"data":[{"value":[33.5,19]},{"value":[34.1,18.1]},{"value":[34.4,18.4]},{"value":[34.6,21.1]},{"value":[34.6,17.2]},{"value":[35.1,19.4]},{"value":[35.2,15.9]},{"value":[35.5,17.5]},{"value":[35.7,17]},{"value":[35.9,16.6]},{"value":[36.2,16.1]},{"value":[36.2,17.2]},{"value":[36.6,17.8]},{"value":[36.7,19.3]},{"value":[36.7,18.8]},{"value":[37.2,19.4]},{"value":[37.3,20.5]},{"value":[37.7,19.8]},{"value":[37.8,17.1]},{"value":[37.8,17.3]},{"value":[38.5,17.9]},{"value":[38.6,21.2]},{"value":[38.6,17]},{"value":[38.7,19]},{"value":[38.8,17.6]},{"value":[38.9,17.8]},{"value":[39,17.1]},{"value":[39.1,18.7]},{"value":[39.2,19.6]},{"value":[39.3,20.6]},{"value":[39.5,17.4]},{"value":[39.6,17.2]},{"value":[39.7,18.4]},{"value":[40.2,17]},{"value":[40.3,18]},{"value":[40.6,19]},{"value":[40.9,16.8]},{"value":[41.1,17.6]},{"value":[41.1,18.6]},{"value":[41.4,18.5]},{"value":[41.5,18.3]},{"value":[41.8,19.4]},{"value":[42,20.2]},{"value":[42.1,19.1]},{"value":[42.5,20.7]},{"value":[42.8,18.5]},{"value":[42.9,17.6]},{"value":[43.1,19.2]},{"value":[44.1,18]},{"value":[45.8,18.9]},{"value":[46,21.5]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Torgersen Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-7894adfcfe801ffadeee" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7894adfcfe801ffadeee">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Body Mass (g)","scale":true}],"xAxis":[{"type":"value","name":"Flipper Length (mm)","scale":true}],"legend":{"data":["Adelie","Gentoo"]},"series":[{"data":[{"value":[172,3150]},{"value":[174,3400]},{"value":[180,3600]},{"value":[180,3800]},{"value":[180,3950]},{"value":[181,2850]},{"value":[181,3175]},{"value":[183,3550]},{"value":[183,3075]},{"value":[184,2850]},{"value":[184,3550]},{"value":[185,3950]},{"value":[185,3150]},{"value":[185,3600]},{"value":[186,3500]},{"value":[186,3550]},{"value":[187,3800]},{"value":[187,3200]},{"value":[187,2900]},{"value":[188,4300]},{"value":[188,4100]},{"value":[189,3800]},{"value":[190,3450]},{"value":[190,4250]},{"value":[190,3900]},{"value":[191,3700]},{"value":[191,4600]},{"value":[191,3900]},{"value":[192,4050]},{"value":[192,3950]},{"value":[192,3725]},{"value":[193,3800]},{"value":[193,2925]},{"value":[193,3200]},{"value":[194,3750]},{"value":[195,4400]},{"value":[195,3350]},{"value":[196,4075]},{"value":[197,4775]},{"value":[197,4275]},{"value":[198,3825]},{"value":[199,3750]},{"value":[200,4050]},{"value":[203,4725]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[203,4625]},{"value":[207,5050]},{"value":[208,4350]},{"value":[208,5350]},{"value":[208,3950]},{"value":[208,4300]},{"value":[208,4450]},{"value":[208,4200]},{"value":[208,4575]},{"value":[209,4400]},{"value":[209,4800]},{"value":[209,4700]},{"value":[209,4600]},{"value":[209,5500]},{"value":[210,4450]},{"value":[210,4550]},{"value":[210,4200]},{"value":[210,4150]},{"value":[210,4600]},{"value":[210,4300]},{"value":[210,4200]},{"value":[210,4850]},{"value":[210,4400]},{"value":[210,4700]},{"value":[211,4500]},{"value":[211,4800]},{"value":[212,4625]},{"value":[212,4725]},{"value":[212,4750]},{"value":[212,4875]},{"value":[212,4750]},{"value":[212,5200]},{"value":[213,5850]},{"value":[213,4400]},{"value":[213,4950]},{"value":[213,5100]},{"value":[213,4650]},{"value":[213,5400]},{"value":[214,4650]},{"value":[214,4650]},{"value":[214,4400]},{"value":[214,4650]},{"value":[214,4850]},{"value":[214,4925]},{"value":[215,5400]},{"value":[215,5150]},{"value":[215,5000]},{"value":[215,5050]},{"value":[215,5000]},{"value":[215,5100]},{"value":[215,5650]},{"value":[215,5300]},{"value":[215,4750]},{"value":[215,4975]},{"value":[215,5500]},{"value":[215,4850]},{"value":[216,5550]},{"value":[216,4100]},{"value":[216,4750]},{"value":[216,4750]},{"value":[216,4700]},{"value":[216,4925]},{"value":[216,4725]},{"value":[216,5000]},{"value":[217,5850]},{"value":[217,4900]},{"value":[217,4900]},{"value":[217,5200]},{"value":[217,4375]},{"value":[217,4875]},{"value":[218,5700]},{"value":[218,5700]},{"value":[218,4600]},{"value":[218,5300]},{"value":[218,4950]},{"value":[219,5200]},{"value":[219,5250]},{"value":[219,4700]},{"value":[219,4850]},{"value":[219,5500]},{"value":[220,5550]},{"value":[220,5150]},{"value":[220,5400]},{"value":[220,5300]},{"value":[220,5050]},{"value":[220,5000]},{"value":[220,4700]},{"value":[220,6000]},{"value":[221,6300]},{"value":[221,5300]},{"value":[221,5000]},{"value":[221,5100]},{"value":[221,5450]},{"value":[222,5350]},{"value":[222,5250]},{"value":[222,5550]},{"value":[222,4875]},{"value":[222,6000]},{"value":[222,5750]},{"value":[223,5550]},{"value":[223,5950]},{"value":[224,5550]},{"value":[224,5350]},{"value":[224,5650]},{"value":[225,5700]},{"value":[225,5400]},{"value":[225,5000]},{"value":[225,5250]},{"value":[226,5200]},{"value":[228,5600]},{"value":[228,5400]},{"value":[228,5600]},{"value":[228,5500]},{"value":[229,5800]},{"value":[229,5950]},{"value":[230,5700]},{"value":[230,6050]},{"value":[230,5700]},{"value":[230,5800]},{"value":[230,5550]},{"value":[230,5500]},{"value":[230,5850]},{"value":[231,5650]}],"name":"Gentoo","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Biscoe Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c3d6d2430c746b18ecef" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c3d6d2430c746b18ecef">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Body Mass (g)","scale":true}],"xAxis":[{"type":"value","name":"Flipper Length (mm)","scale":true}],"legend":{"data":["Adelie","Gentoo"]},"series":[{"data":[{"value":[172,3150]},{"value":[174,3400]},{"value":[180,3600]},{"value":[180,3800]},{"value":[180,3950]},{"value":[181,2850]},{"value":[181,3175]},{"value":[183,3550]},{"value":[183,3075]},{"value":[184,2850]},{"value":[184,3550]},{"value":[185,3950]},{"value":[185,3150]},{"value":[185,3600]},{"value":[186,3500]},{"value":[186,3550]},{"value":[187,3800]},{"value":[187,3200]},{"value":[187,2900]},{"value":[188,4300]},{"value":[188,4100]},{"value":[189,3800]},{"value":[190,3450]},{"value":[190,4250]},{"value":[190,3900]},{"value":[191,3700]},{"value":[191,4600]},{"value":[191,3900]},{"value":[192,4050]},{"value":[192,3950]},{"value":[192,3725]},{"value":[193,3800]},{"value":[193,2925]},{"value":[193,3200]},{"value":[194,3750]},{"value":[195,4400]},{"value":[195,3350]},{"value":[196,4075]},{"value":[197,4775]},{"value":[197,4275]},{"value":[198,3825]},{"value":[199,3750]},{"value":[200,4050]},{"value":[203,4725]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[203,4625]},{"value":[207,5050]},{"value":[208,4350]},{"value":[208,5350]},{"value":[208,3950]},{"value":[208,4300]},{"value":[208,4450]},{"value":[208,4200]},{"value":[208,4575]},{"value":[209,4400]},{"value":[209,4800]},{"value":[209,4700]},{"value":[209,4600]},{"value":[209,5500]},{"value":[210,4450]},{"value":[210,4550]},{"value":[210,4200]},{"value":[210,4150]},{"value":[210,4600]},{"value":[210,4300]},{"value":[210,4200]},{"value":[210,4850]},{"value":[210,4400]},{"value":[210,4700]},{"value":[211,4500]},{"value":[211,4800]},{"value":[212,4625]},{"value":[212,4725]},{"value":[212,4750]},{"value":[212,4875]},{"value":[212,4750]},{"value":[212,5200]},{"value":[213,5850]},{"value":[213,4400]},{"value":[213,4950]},{"value":[213,5100]},{"value":[213,4650]},{"value":[213,5400]},{"value":[214,4650]},{"value":[214,4650]},{"value":[214,4400]},{"value":[214,4650]},{"value":[214,4850]},{"value":[214,4925]},{"value":[215,5400]},{"value":[215,5150]},{"value":[215,5000]},{"value":[215,5050]},{"value":[215,5000]},{"value":[215,5100]},{"value":[215,5650]},{"value":[215,5300]},{"value":[215,4750]},{"value":[215,4975]},{"value":[215,5500]},{"value":[215,4850]},{"value":[216,5550]},{"value":[216,4100]},{"value":[216,4750]},{"value":[216,4750]},{"value":[216,4700]},{"value":[216,4925]},{"value":[216,4725]},{"value":[216,5000]},{"value":[217,5850]},{"value":[217,4900]},{"value":[217,4900]},{"value":[217,5200]},{"value":[217,4375]},{"value":[217,4875]},{"value":[218,5700]},{"value":[218,5700]},{"value":[218,4600]},{"value":[218,5300]},{"value":[218,4950]},{"value":[219,5200]},{"value":[219,5250]},{"value":[219,4700]},{"value":[219,4850]},{"value":[219,5500]},{"value":[220,5550]},{"value":[220,5150]},{"value":[220,5400]},{"value":[220,5300]},{"value":[220,5050]},{"value":[220,5000]},{"value":[220,4700]},{"value":[220,6000]},{"value":[221,6300]},{"value":[221,5300]},{"value":[221,5000]},{"value":[221,5100]},{"value":[221,5450]},{"value":[222,5350]},{"value":[222,5250]},{"value":[222,5550]},{"value":[222,4875]},{"value":[222,6000]},{"value":[222,5750]},{"value":[223,5550]},{"value":[223,5950]},{"value":[224,5550]},{"value":[224,5350]},{"value":[224,5650]},{"value":[225,5700]},{"value":[225,5400]},{"value":[225,5000]},{"value":[225,5250]},{"value":[226,5200]},{"value":[228,5600]},{"value":[228,5400]},{"value":[228,5600]},{"value":[228,5500]},{"value":[229,5800]},{"value":[229,5950]},{"value":[230,5700]},{"value":[230,6050]},{"value":[230,5700]},{"value":[230,5800]},{"value":[230,5550]},{"value":[230,5500]},{"value":[230,5850]},{"value":[231,5650]}],"name":"Gentoo","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Biscoe Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-dca18900da372011f391" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dca18900da372011f391">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Body Mass (g)","scale":true}],"xAxis":[{"type":"value","name":"Flipper Length (mm)","scale":true}],"legend":{"data":["Adelie","Chinstrap"]},"series":[{"data":[{"value":[178,3250]},{"value":[178,3900]},{"value":[178,2900]},{"value":[179,2975]},{"value":[180,3550]},{"value":[181,3300]},{"value":[182,3150]},{"value":[182,3425]},{"value":[184,3900]},{"value":[184,4650]},{"value":[184,3475]},{"value":[185,3000]},{"value":[185,3400]},{"value":[185,3400]},{"value":[185,3650]},{"value":[186,3100]},{"value":[186,4450]},{"value":[187,3300]},{"value":[187,3425]},{"value":[187,3475]},{"value":[187,3700]},{"value":[188,3300]},{"value":[188,3050]},{"value":[189,3500]},{"value":[189,3950]},{"value":[190,3950]},{"value":[190,4600]},{"value":[190,3450]},{"value":[190,3800]},{"value":[190,3600]},{"value":[190,3700]},{"value":[190,3900]},{"value":[190,3725]},{"value":[190,4250]},{"value":[191,4150]},{"value":[191,3350]},{"value":[191,3175]},{"value":[192,4100]},{"value":[192,3000]},{"value":[193,3500]},{"value":[193,4250]},{"value":[193,3400]},{"value":[193,3750]},{"value":[194,3550]},{"value":[195,3325]},{"value":[195,3900]},{"value":[195,3450]},{"value":[196,4150]},{"value":[196,4400]},{"value":[196,4350]},{"value":[199,4475]},{"value":[200,3975]},{"value":[201,4000]},{"value":[202,3550]},{"value":[205,4300]},{"value":[208,4300]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[178,3250]},{"value":[181,3700]},{"value":[181,3600]},{"value":[185,3700]},{"value":[187,2900]},{"value":[187,3200]},{"value":[187,3350]},{"value":[187,3650]},{"value":[187,3250]},{"value":[187,3350]},{"value":[188,3525]},{"value":[189,3650]},{"value":[190,3575]},{"value":[190,3450]},{"value":[190,3400]},{"value":[191,3400]},{"value":[191,3700]},{"value":[191,3250]},{"value":[192,3500]},{"value":[192,2700]},{"value":[193,3650]},{"value":[193,3800]},{"value":[193,3800]},{"value":[193,3600]},{"value":[193,3775]},{"value":[194,3775]},{"value":[194,3525]},{"value":[195,4150]},{"value":[195,4400]},{"value":[195,3300]},{"value":[195,3600]},{"value":[195,3850]},{"value":[195,3650]},{"value":[196,3900]},{"value":[196,3550]},{"value":[196,3500]},{"value":[196,3675]},{"value":[197,3725]},{"value":[197,3750]},{"value":[197,3300]},{"value":[197,4150]},{"value":[197,3450]},{"value":[198,3950]},{"value":[198,3700]},{"value":[198,3675]},{"value":[198,3775]},{"value":[199,3900]},{"value":[199,3325]},{"value":[200,3400]},{"value":[200,3800]},{"value":[201,4050]},{"value":[201,4050]},{"value":[201,4300]},{"value":[201,4450]},{"value":[201,3950]},{"value":[202,3800]},{"value":[202,3400]},{"value":[203,4100]},{"value":[203,4050]},{"value":[203,4050]},{"value":[205,4550]},{"value":[205,4500]},{"value":[206,3950]},{"value":[207,4000]},{"value":[210,4800]},{"value":[210,3950]},{"value":[210,4100]},{"value":[212,4300]}],"name":"Chinstrap","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Dream Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3e35afcb74de96375380" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3e35afcb74de96375380">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Body Mass (g)","scale":true}],"xAxis":[{"type":"value","name":"Flipper Length (mm)","scale":true}],"legend":{"data":["Adelie","Chinstrap"]},"series":[{"data":[{"value":[178,3250]},{"value":[178,3900]},{"value":[178,2900]},{"value":[179,2975]},{"value":[180,3550]},{"value":[181,3300]},{"value":[182,3150]},{"value":[182,3425]},{"value":[184,3900]},{"value":[184,4650]},{"value":[184,3475]},{"value":[185,3000]},{"value":[185,3400]},{"value":[185,3400]},{"value":[185,3650]},{"value":[186,3100]},{"value":[186,4450]},{"value":[187,3300]},{"value":[187,3425]},{"value":[187,3475]},{"value":[187,3700]},{"value":[188,3300]},{"value":[188,3050]},{"value":[189,3500]},{"value":[189,3950]},{"value":[190,3950]},{"value":[190,4600]},{"value":[190,3450]},{"value":[190,3800]},{"value":[190,3600]},{"value":[190,3700]},{"value":[190,3900]},{"value":[190,3725]},{"value":[190,4250]},{"value":[191,4150]},{"value":[191,3350]},{"value":[191,3175]},{"value":[192,4100]},{"value":[192,3000]},{"value":[193,3500]},{"value":[193,4250]},{"value":[193,3400]},{"value":[193,3750]},{"value":[194,3550]},{"value":[195,3325]},{"value":[195,3900]},{"value":[195,3450]},{"value":[196,4150]},{"value":[196,4400]},{"value":[196,4350]},{"value":[199,4475]},{"value":[200,3975]},{"value":[201,4000]},{"value":[202,3550]},{"value":[205,4300]},{"value":[208,4300]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8},{"data":[{"value":[178,3250]},{"value":[181,3700]},{"value":[181,3600]},{"value":[185,3700]},{"value":[187,2900]},{"value":[187,3200]},{"value":[187,3350]},{"value":[187,3650]},{"value":[187,3250]},{"value":[187,3350]},{"value":[188,3525]},{"value":[189,3650]},{"value":[190,3575]},{"value":[190,3450]},{"value":[190,3400]},{"value":[191,3400]},{"value":[191,3700]},{"value":[191,3250]},{"value":[192,3500]},{"value":[192,2700]},{"value":[193,3650]},{"value":[193,3800]},{"value":[193,3800]},{"value":[193,3600]},{"value":[193,3775]},{"value":[194,3775]},{"value":[194,3525]},{"value":[195,4150]},{"value":[195,4400]},{"value":[195,3300]},{"value":[195,3600]},{"value":[195,3850]},{"value":[195,3650]},{"value":[196,3900]},{"value":[196,3550]},{"value":[196,3500]},{"value":[196,3675]},{"value":[197,3725]},{"value":[197,3750]},{"value":[197,3300]},{"value":[197,4150]},{"value":[197,3450]},{"value":[198,3950]},{"value":[198,3700]},{"value":[198,3675]},{"value":[198,3775]},{"value":[199,3900]},{"value":[199,3325]},{"value":[200,3400]},{"value":[200,3800]},{"value":[201,4050]},{"value":[201,4050]},{"value":[201,4300]},{"value":[201,4450]},{"value":[201,3950]},{"value":[202,3800]},{"value":[202,3400]},{"value":[203,4100]},{"value":[203,4050]},{"value":[203,4050]},{"value":[205,4550]},{"value":[205,4500]},{"value":[206,3950]},{"value":[207,4000]},{"value":[210,4800]},{"value":[210,3950]},{"value":[210,4100]},{"value":[212,4300]}],"name":"Chinstrap","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Dream Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-9825273a85ae0603d163" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9825273a85ae0603d163">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Body Mass (g)","scale":true}],"xAxis":[{"type":"value","name":"Flipper Length (mm)","scale":true}],"legend":{"data":["Adelie"]},"series":[{"data":[{"value":[176,3450]},{"value":[180,3700]},{"value":[181,3750]},{"value":[181,3625]},{"value":[182,3200]},{"value":[184,3325]},{"value":[184,3900]},{"value":[185,3700]},{"value":[186,3800]},{"value":[186,3300]},{"value":[186,3050]},{"value":[187,3550]},{"value":[187,3800]},{"value":[187,3150]},{"value":[188,2900]},{"value":[189,3200]},{"value":[189,3350]},{"value":[189,3325]},{"value":[190,3650]},{"value":[190,4250]},{"value":[190,3050]},{"value":[190,3600]},{"value":[190,3900]},{"value":[190,3700]},{"value":[190,3325]},{"value":[191,3800]},{"value":[191,3700]},{"value":[191,3275]},{"value":[191,3050]},{"value":[193,3450]},{"value":[193,3475]},{"value":[193,4200]},{"value":[194,4200]},{"value":[195,3250]},{"value":[195,4675]},{"value":[195,3450]},{"value":[195,4250]},{"value":[195,4000]},{"value":[195,4300]},{"value":[196,3550]},{"value":[196,4700]},{"value":[197,4500]},{"value":[197,4150]},{"value":[197,3500]},{"value":[198,4400]},{"value":[198,4450]},{"value":[198,3500]},{"value":[199,3775]},{"value":[199,4000]},{"value":[202,3875]},{"value":[210,4000]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Torgersen Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8758aacccc5e021fb646" style="width:500px;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8758aacccc5e021fb646">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Body Mass (g)","scale":true}],"xAxis":[{"type":"value","name":"Flipper Length (mm)","scale":true}],"legend":{"data":["Adelie"]},"series":[{"data":[{"value":[176,3450]},{"value":[180,3700]},{"value":[181,3750]},{"value":[181,3625]},{"value":[182,3200]},{"value":[184,3325]},{"value":[184,3900]},{"value":[185,3700]},{"value":[186,3800]},{"value":[186,3300]},{"value":[186,3050]},{"value":[187,3550]},{"value":[187,3800]},{"value":[187,3150]},{"value":[188,2900]},{"value":[189,3200]},{"value":[189,3350]},{"value":[189,3325]},{"value":[190,3650]},{"value":[190,4250]},{"value":[190,3050]},{"value":[190,3600]},{"value":[190,3900]},{"value":[190,3700]},{"value":[190,3325]},{"value":[191,3800]},{"value":[191,3700]},{"value":[191,3275]},{"value":[191,3050]},{"value":[193,3450]},{"value":[193,3475]},{"value":[193,4200]},{"value":[194,4200]},{"value":[195,3250]},{"value":[195,4675]},{"value":[195,3450]},{"value":[195,4250]},{"value":[195,4000]},{"value":[195,4300]},{"value":[196,3550]},{"value":[196,4700]},{"value":[197,4500]},{"value":[197,4150]},{"value":[197,3500]},{"value":[198,4400]},{"value":[198,4450]},{"value":[198,3500]},{"value":[199,3775]},{"value":[199,4000]},{"value":[202,3875]},{"value":[210,4000]}],"name":"Adelie","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":8}],"tooltip":{"trigger":"item"},"title":[{"text":"Torgersen Island"}],"color":["#ff6b35","#6c5ce7","#00b894"],"backgroundColor":"transparent","toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -258,43 +261,58 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -302,180 +320,189 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jhelvy\.github\.io\/quarto-dashboard\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -483,185 +510,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
