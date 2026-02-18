@@ -1,0 +1,89 @@
+---
+title: "Tech Stack"
+---
+
+This dashboard demonstrates how **Quarto** can serve as a multi-page dashboard framework, integrating multiple visualization technologies into a cohesive static site.
+
+## Architecture
+
+The site is built as a **Quarto website** (`type: website`), not using the `dashboard` format. This provides:
+
+- Sidebar navigation with Bootstrap Icons
+- Full page layout with the Flatly theme
+- Table of contents per page
+- Static site output to `_site/`
+
+## Visualization Technologies
+
+### echarts4r (R)
+
+Used on the [Species Overview](species.qmd) and [Island Comparison](islands.qmd) pages.
+
+- **What:** R wrapper for Apache ECharts
+- **Features:** Boxplots, bar charts, scatter plots with tooltips
+- **Pattern:** Charts defined in R code blocks, rendered at build time
+- **Data:** `palmerpenguins::penguins` dataset loaded via `setup.R`
+- **Extras:** Toolbox with data zoom and save-as-image
+
+### Shinylive (R → WebAssembly)
+
+Used on the [Explorer](explorer.qmd) page.
+
+- **What:** Shiny apps compiled to WebAssembly, running entirely in the browser
+- **Features:** Reactive UI with dropdowns and scatter plot
+- **Pattern:** Single `{shinylive-r}` code block with full UI + server
+- **Extension:** [`quarto-ext/shinylive`](https://github.com/quarto-ext/shinylive)
+- **Layout:** `bslib::page_sidebar()` for sidebar controls
+
+### React + D3 (JavaScript)
+
+Used on the [D3 Visualization](penguins-d3.qmd) page.
+
+- **What:** Custom interactive visualization built with React and D3
+- **Features:** Waffle chart with hover highlighting by species and island
+- **Pattern:** Separate Vite project in `react-chart/`, built to `dist/`, embedded via `<iframe>`
+- **Key config:** `base: './'` in `vite.config.js` for relative asset paths
+- **Build:** `npm run build` produces static files; Quarto copies `dist/` to `_site/`
+
+## Data Tables
+
+All data pages include **reactable** tables with:
+
+- Search functionality
+- Column filtering
+- Adjustable page sizes
+- Row highlighting
+
+## CSS
+
+Custom stylesheet (`styles.css`) adapted with:
+
+- Penguin species color palette (orange/purple/green)
+- Gray scale design tokens
+- Inter font family
+- Styled panel tabsets, sidebar, tables, and iframes
+
+## How to Reproduce
+
+```bash
+# 1. Install the shinylive Quarto extension
+quarto add quarto-ext/shinylive
+
+# 2. Build the React chart
+cd react-chart && npm install && npm run build && cd ..
+
+# 3. Preview the site
+quarto preview
+
+# 4. Build the site
+quarto render
+```
+
+## Links
+
+- **Data:** [palmerpenguins R package](https://allisonhorst.github.io/palmerpenguins/)
+- **Quarto:** [quarto.org](https://quarto.org)
+- **echarts4r:** [echarts4r.john-coene.com](https://echarts4r.john-coene.com)
+- **Shinylive:** [shinylive.io](https://shinylive.io)
+- **React:** [react.dev](https://react.dev)
+- **D3:** [d3js.org](https://d3js.org)

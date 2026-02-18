@@ -1,0 +1,68 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 5897
+    browser: true
+  render:
+    - "*.qmd"
+  resources:
+    - react-chart/dist/**
+
+website:
+  title: "Palmer Penguins Dashboard"
+  favicon: images/favicon.png
+  sidebar:
+    style: "docked"
+    background: "light"
+    logo: images/logo.png
+    collapse-level: 1
+    search: true
+    contents:
+    - text: Home
+      icon: house-fill
+      href: index.qmd
+    - text: About
+      icon: info-circle-fill
+      href: about.qmd
+    - text: "Species Overview"
+      icon: bar-chart-fill
+      href: species.qmd
+    - text: "Island Comparison"
+      icon: globe-americas
+      href: islands.qmd
+    - text: "Explorer"
+      icon: sliders
+      href: explorer.qmd
+    - text: "D3 Visualization"
+      icon: grid-3x3-gap-fill
+      href: penguins-d3.qmd
+    - text: "Data"
+      icon: table
+      href: data.qmd
+    - text: "Tech Stack"
+      icon: gear-fill
+      href: tech-stack.qmd
+
+  page-footer:
+    center:
+      - text: "Built with <a href='https://quarto.org'>Quarto</a> | Data from <a href='https://allisonhorst.github.io/palmerpenguins/'>palmerpenguins</a>"
+
+format:
+  html:
+    page-layout: full
+    theme:
+      light: flatly
+    css: styles.css
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: false
+    toc-location: right
+    toc: true
+    mainfont: Inter, -apple-system, BlinkMacSystemFont, sans-serif
+
+execute:
+  echo: false
+  message: false
+  warning: false

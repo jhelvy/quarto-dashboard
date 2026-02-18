@@ -1,0 +1,62 @@
+---
+title: "About"
+---
+
+```{r}
+#| include: false
+source("setup.R")
+```
+
+## The Dataset
+
+The [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) dataset contains measurements for `r nrow(penguins_clean)` penguins from three species collected at three islands in the Palmer Archipelago, Antarctica.
+
+![Artwork by [Allison Horst](https://allisonhorst.github.io/palmerpenguins/)](images/lter_penguins.png){width=70% fig-alt="Illustration of the three penguin species: Chinstrap, Gentoo, and Adelie"}
+
+::: {.grid}
+
+::: {.g-col-4}
+### <span class="species-chinstrap">Chinstrap</span>
+
+Named for the thin black line running under their chin. Found exclusively on Dream Island.
+
+- **Count:** `r sum(penguins_clean$species == "Chinstrap")`
+- **Islands:** Dream
+:::
+
+::: {.g-col-4}
+### <span class="species-gentoo">Gentoo</span>
+
+The largest of the three species, with distinctive orange bills. Found primarily on Biscoe Island.
+
+- **Count:** `r sum(penguins_clean$species == "Gentoo")`
+- **Islands:** Biscoe
+:::
+
+::: {.g-col-4}
+### <span class="species-adelie">Adelie</span>
+
+The most widespread species, found on all three islands. Characterized by shorter bills and moderate body mass.
+
+- **Count:** `r sum(penguins_clean$species == "Adelie")`
+- **Islands:** Biscoe, Dream, Torgersen
+:::
+
+:::
+
+## Measurements
+
+The dataset includes four key body measurements:
+
+| Measurement | Description |
+|---|---|
+| **Bill Length** (mm) | Length of the penguin's bill (culmen) |
+| **Bill Depth** (mm) | Depth of the penguin's bill |
+| **Flipper Length** (mm) | Length of the penguin's flipper |
+| **Body Mass** (g) | Weight of the penguin |
+
+![Artwork by [Allison Horst](https://allisonhorst.github.io/palmerpenguins/)](images/culmen_depth.png){width=60% fig-alt="Illustration showing how bill length and depth are measured on a penguin"}
+
+## Data Source
+
+Data were collected by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) at [Palmer Station, Antarctica](https://pallter.marine.rutgers.edu/), and made available through the [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) R package by [Allison Horst](https://allisonhorst.github.io/).

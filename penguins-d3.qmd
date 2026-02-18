@@ -1,0 +1,15 @@
+---
+title: "D3 Visualization"
+toc: false
+---
+
+This interactive waffle chart is built with **React + D3** and embedded via an iframe. Each square represents one penguin, colored by species and grouped by island. Hover over species labels or island panels to highlight.
+
+```{=html}
+<iframe
+  src="react-chart/dist/index.html"
+  width="100%"
+  height="700"
+  style="border:none;"
+></iframe>
+```
