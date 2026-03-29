@@ -1,5 +1,6 @@
 ---
 title: "Interactive Explorer"
+engine: knitr
 format:
   html:
     include-in-header:
