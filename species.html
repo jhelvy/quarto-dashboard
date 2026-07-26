@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-caa8efd4796b51186e3b1e921d07e1f1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-efab80197f06efb354d9fa119a8e4799.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -219,8 +222,8 @@ ul.task-list li input[type="checkbox"] {
 <div style="max-width: 500px;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-452062fd87e92978d964" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-452062fd87e92978d964">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Bill Length (mm)"},"series":[{"type":"boxplot","data":[[32.1,36.75,38.8,40.75,46],[40.9,46.34999999999999,49.55,51.075,58],[40.9,45.3,47.3,49.55,59.6]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-a15cc994ba43339ead2e" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-a15cc994ba43339ead2e">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Bill Length (mm)"},"series":[{"type":"boxplot","data":[[32.1,36.75,38.8,40.75,46],[40.9,46.34999999999999,49.55,51.075,58],[40.9,45.3,47.3,49.55,59.6]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -230,8 +233,8 @@ ul.task-list li input[type="checkbox"] {
 <div style="max-width: 500px;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-21597c372bae72723f63" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-21597c372bae72723f63">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Bill Depth (mm)"},"series":[{"type":"boxplot","data":[[15.5,17.5,18.4,19,21.5],[16.4,17.5,18.45,19.4,20.8],[13.1,14.2,15,15.7,17.3]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-338f41b5f30cc9e5dc70" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-338f41b5f30cc9e5dc70">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Bill Depth (mm)"},"series":[{"type":"boxplot","data":[[15.5,17.5,18.4,19,21.5],[16.4,17.5,18.45,19.4,20.8],[13.1,14.2,15,15.7,17.3]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -241,8 +244,8 @@ ul.task-list li input[type="checkbox"] {
 <div style="max-width: 500px;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-64d48c8f7019b9716f48" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-64d48c8f7019b9716f48">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Flipper Length (mm)"},"series":[{"type":"boxplot","data":[[172,186,190,195,210],[178,191,196,201,212],[203,212,216,221,231]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-8eee297f863c03b21eca" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-8eee297f863c03b21eca">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Flipper Length (mm)"},"series":[{"type":"boxplot","data":[[172,186,190,195,210],[178,191,196,201,212],[203,212,216,221,231]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -252,8 +255,8 @@ ul.task-list li input[type="checkbox"] {
 <div style="max-width: 500px;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-4a8d58d518d46098680d" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-4a8d58d518d46098680d">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Body Mass (g)"},"series":[{"type":"boxplot","data":[[2850,3350,3700,4000,4775],[2700,3487.5,3700,3950,4800],[3950,4700,5000,5500,6300]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-373f227dcffaa15e770c" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-373f227dcffaa15e770c">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":{"type":"category","data":["Adelie","Chinstrap","Gentoo"],"name":"Species"},"yAxis":{"type":"value","name":"Body Mass (g)"},"series":[{"type":"boxplot","data":[[2850,3350,3700,4000,4775],[2700,3487.5,3700,3950,4800],[3950,4700,5000,5500,6300]],"itemStyle":{"color":"transparent","borderColor":"#ff6b35"}}],"tooltip":{"trigger":"item"},"toolbox":{"feature":{"saveAsImage":[]}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
